@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    //Site Services
+
+    'headerimage' => [
+        'path' => 'headerimages',
+    ],
+
 ];

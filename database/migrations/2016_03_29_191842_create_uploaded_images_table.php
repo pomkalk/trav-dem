@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUploadedFilesTable extends Migration
+class CreateUploadedImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,12 @@ class CreateUploadedFilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('uploaded_files', function (Blueprint $table) {
-            $table->string('id', 60);
-            $table->string('type', 10);
-            $table->string('mime', 50);
-            $table->string('original_name');
-            $table->integer('user_id')->unsigned();
-            $table->float('size');
+        Schema::create('uploaded_images', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('extention',10);
+            $table->string('mine', 50);
+            $table->integer('size')->unsigned();
             $table->integer('width')->unsigned();
             $table->integer('height')->unsigned();
             $table->softDeletes();
@@ -33,6 +32,6 @@ class CreateUploadedFilesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('uploaded_files');
+        Schema::drop('uploaded_images');
     }
 }
