@@ -1,0 +1,6 @@
+[-] Create main models and migrations
+[-] Create ImageComntoller 
+[-] Create HeaderImage
+	* [+] Retrun array of random id of images | getRandom($amount=1)
+	* [+] upload file to header image | upload($request, $field)
+	* [+] retrun image response by id | getImageById($id)

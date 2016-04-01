@@ -13,15 +13,17 @@ class CreateUploadedImagesTable extends Migration
     public function up()
     {
         Schema::create('uploaded_images', function (Blueprint $table) {
-            $table->increments('id');
+            $table->string('id', 60);
             $table->string('name');
-            $table->string('extention',10);
-            $table->string('mine', 50);
+            $table->string('extension',10);
+            $table->string('mime', 50);
             $table->integer('size')->unsigned();
             $table->integer('width')->unsigned();
             $table->integer('height')->unsigned();
             $table->softDeletes();
             $table->timestamps();
+
+            $table->primary('id');
         });
     }
 

@@ -10,7 +10,13 @@
 </head>
 <body>
     
-
+<form action="{{url('upload')}}" method="post" class="ui form" enctype="multipart/form-data">
+{{ csrf_field() }}
+	<div class="field">
+		<input type="file" name="upload" id="upload">
+	</div>
+	<button type="submit" class="ui simple button">upload</button>
+</form>
 
 
 </body>

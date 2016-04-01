@@ -15,4 +15,10 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', 'MainController@index');
 
+    Route::get('upload', 'MainController@getUpload');
+    Route::post('upload', 'MainController@postUpload');
+
+
+    Route::get('images/{id}', 'ImageController@getImage');
+    Route::get('images/header/{id}', 'ImageController@getHeaderImage');
 });
