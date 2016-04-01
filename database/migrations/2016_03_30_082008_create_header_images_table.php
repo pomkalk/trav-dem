@@ -20,6 +20,8 @@ class CreateHeaderImagesTable extends Migration
             $table->float('size')->unsigned();
             $table->integer('width')->unsigned();
             $table->integer('height')->unsigned();
+            $table->string('title');
+            $table->string('text');
             $table->softDeletes();
             $table->timestamps();
 

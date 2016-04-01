@@ -7,15 +7,12 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use File;
 
-use App\Services\HeaderImage\HeaderImage;
+use HeaderImages;
 
 class MainController extends Controller
 {
     public function index(){
-
-    	$a = new \App\Services\HeaderImage\HeaderImage();
-    	$a->getRandom();
-    	return view('index');
+    	return view('index', ['headerImages'=>HeaderImages::getRandom(5)]);
     }
 
     public function getUpload(){
